@@ -85,7 +85,7 @@ for data in test_loader_64:
     writer.add_images("sigmoid_img", sigmoid_img, flag)
 
     dropout_img = dropout_module(imgs)
-    writer.add_images("dropout_imgs", dropout_img, flag)
+    writer.add_images("dropout_img", dropout_img, flag)
 
     # 展平输入数据
     imgs = torch.reshape(imgs, (1,1,1,-1))
