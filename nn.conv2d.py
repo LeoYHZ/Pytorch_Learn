@@ -38,4 +38,5 @@ for data in test_loader_64:
     # print(imgs.shape)
     # print(ouput_data.shape)
 
+
 writer.close()
