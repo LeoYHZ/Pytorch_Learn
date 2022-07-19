@@ -5,8 +5,8 @@ writer = SummaryWriter("logs")
 
 tensor_trans = transforms.ToTensor()
 
-train_set = torchvision.datasets.CIFAR10(root="./dataset", train=True,transform=tensor_trans, download=True)
-test_set = torchvision.datasets.CIFAR10(root="./dataset", train=False,transform=tensor_trans, download=True)
+train_set = torchvision.datasets.CIFAR10(root="./datasets", train=True,transform=tensor_trans, download=True)
+test_set = torchvision.datasets.CIFAR10(root="./datasets", train=False,transform=tensor_trans, download=True)
 
 # print(test_set[0])
 #

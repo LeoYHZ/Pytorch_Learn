@@ -5,7 +5,7 @@ import torch.nn as nn
 from torch.utils.tensorboard import SummaryWriter
 
 tensor_trans = torchvision.transforms.ToTensor()
-test_set = torchvision.datasets.CIFAR10(root="./dataset", train=False,transform=tensor_trans, download=True)
+test_set = torchvision.datasets.CIFAR10(root="./datasets", train=False,transform=tensor_trans, download=True)
 test_loader_64 = DataLoader(dataset=test_set, batch_size=64, shuffle=False, num_workers=0, drop_last=False)
 
 

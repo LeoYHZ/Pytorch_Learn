@@ -12,7 +12,7 @@ output = torch.reshape(input, (-1, 1, 2, 2))
 
 print(output)
 
-dataset = torchvision.datasets.CIFAR10("./dataset", train=False, download=True, transform=torchvision.transforms.ToTensor())
+dataset = torchvision.datasets.CIFAR10("./datasets", train=False, download=True, transform=torchvision.transforms.ToTensor())
 
 dataloader = DataLoader(dataset, batch_size=64)
 

@@ -6,7 +6,7 @@ from torchvision import transforms
 writer = SummaryWriter("logs")
 
 tensor_trans = transforms.ToTensor()
-test_set = torchvision.datasets.CIFAR10(root="./dataset", train=True,transform=tensor_trans, download=True)
+test_set = torchvision.datasets.CIFAR10(root="./datasets", train=True,transform=tensor_trans, download=True)
 
 test_loader_4 = DataLoader(dataset=test_set, batch_size=4, shuffle=True, num_workers=0, drop_last=False)
 # img, target = test_set[0]
