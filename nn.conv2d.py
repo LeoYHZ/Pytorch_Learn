@@ -37,5 +37,5 @@ for data in test_loader_64:
     print(flag)
     # print(imgs.shape)
     # print(ouput_data.shape)
-
+# test
 writer.close()
