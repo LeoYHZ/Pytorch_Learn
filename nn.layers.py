@@ -90,7 +90,7 @@ for data in test_loader_64:
     # 展平输入数据
     imgs = torch.reshape(imgs, (1,1,1,-1))
     # imgs = torch.flatten(imgs)
-    print(imgs.shape)
+    # print(imgs.shape)
     if (imgs.shape[-1] == 196608):
         linear_img = linear_module(imgs)
         writer.add_images("linear_img", linear_img, flag)
