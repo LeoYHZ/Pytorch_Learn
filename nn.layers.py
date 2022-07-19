@@ -50,6 +50,14 @@ class Linear_Module(nn.Module):
     def forward(self, x):
         return self.liner1(x)
 
+class Dropout_Module(nn.Module):
+    def __init__(self) -> None:
+        super(Dropout_Module, self).__init__()
+        self.dropout1 = nn.Dropout(p=0.1)
+    
+    def forward(self, x):
+        return self.dropout1(x)
+
 writer = SummaryWriter("logs")
 
 conv_module = Conv_Module()
@@ -57,6 +65,7 @@ maxpool_module = MaxPool_Module()
 relu_module = ReLU_Module()
 sigmoid_module = Sigmoid_Module()
 linear_module = Linear_Module()
+dropout_module = Dropout_Module()
 
 flag = 0
 for data in test_loader_64:
@@ -75,6 +84,9 @@ for data in test_loader_64:
     sigmoid_img = sigmoid_module(imgs)
     writer.add_images("sigmoid_img", sigmoid_img, flag)
 
+    dropout_img = dropout_module(imgs)
+    writer.add_images("dropout_imgs", dropout_img, flag)
+
     # 展平输入数据
     imgs = torch.reshape(imgs, (1,1,1,-1))
     # imgs = torch.flatten(imgs)
@@ -82,8 +94,8 @@ for data in test_loader_64:
     if (imgs.shape[-1] == 196608):
         linear_img = linear_module(imgs)
         writer.add_images("linear_img", linear_img, flag)
+    
     flag += 1
     print(flag)
-
 
 writer.close()
